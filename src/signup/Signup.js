@@ -20,6 +20,9 @@ function SignUp() {
     if(auth){
       nav('/')
     }
+    else{
+      nav('/signup')
+    }
   })
 
   const signup = async() =>{
@@ -38,9 +41,10 @@ function SignUp() {
     result = await result.json()
     console.log("result", result)
     localStorage.setItem("user",JSON.stringify(result));
-    if(result){
-      nav("/")
-    }
+    nav('/')
+    // if(result){
+    //   nav("/")
+    // }
   }
 
   return (

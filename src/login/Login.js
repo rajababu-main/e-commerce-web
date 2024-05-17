@@ -28,8 +28,11 @@ function Login(){
         result = await result.json()
         console.log("result", result)
         //localStorage.setItem("user",JSON.stringify(result));
-        if(result.name){
-        
+        // localStorage.setItem('user',JSON.stringify(result));
+        // nav('/dashboard')
+        if(result){
+           localStorage.setItem('user',JSON.stringify(result));
+           nav('/dashboard')
         }
         else{
             alert("please enter correct details");
